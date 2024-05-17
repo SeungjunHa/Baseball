@@ -26,7 +26,6 @@ public:
 		int strikes = 0;
 		int balls = 0;
 		CheckStrikesAndBalls(guessNumber, strikes, balls);
-
 		return { false, strikes, balls };
 	}
 
@@ -40,6 +39,7 @@ public:
 					strikes++;
 				else
 					balls++;
+				break;
 			}
 		}
 	}
