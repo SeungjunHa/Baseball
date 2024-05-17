@@ -13,9 +13,9 @@ public:
 		}
 
 		for (char ch : guessNumber) {
-			if (ch < '0' || ch > '9') {
-				throw invalid_argument("Must be number");
-			}
+			if ('0' <= ch && ch <= '9')
+				continue;
+			throw invalid_argument("Must be number");
 		}
 
 		if (isDuplicatedNumber(guessNumber)) {
