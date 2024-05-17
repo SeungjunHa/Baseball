@@ -21,9 +21,22 @@ public:
 		assertIllegalArgument(guessNumber);
 		if (guessNumber == question) {
 			return { true, 3, 0 };
+		} 
+
+		int strikes = 0;
+		int balls = 0;
+		for (int i = 0; i < guessNumber.length(); i++) {
+			for (int j = 0; j < question.length(); j++) {
+				if (guessNumber[i] == question[j]) {
+					if (i == j)
+						strikes++;
+					else
+						balls++;
+				}
+			}
 		}
 
-		return { false, 0, 0 };
+		return { false, strikes, balls };
 	}
 
 	void assertIllegalArgument(const std::string& guessNumber)
