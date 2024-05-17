@@ -3,7 +3,7 @@
 
 class BaseballFixture : public testing::Test {
 public:
-	Baseball game{ "123 " };
+	Baseball game{ "123" };
 	void assertIllegalargument(string guessNumber) {
 		try {
 			game.guess(guessNumber);
