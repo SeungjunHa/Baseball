@@ -8,6 +8,11 @@ class Baseball
 {
 public:
 	void guess(const string& guessNumber) {
+		assertIllegalArgument(guessNumber);
+	}
+
+	void assertIllegalArgument(const std::string& guessNumber)
+	{
 		if (guessNumber.length() != 3) {
 			throw length_error("Must be three letters.");
 		}
