@@ -25,6 +25,13 @@ public:
 
 		int strikes = 0;
 		int balls = 0;
+		CheckStrikesAndBalls(guessNumber, strikes, balls);
+
+		return { false, strikes, balls };
+	}
+
+	void CheckStrikesAndBalls(const std::string& guessNumber, int& strikes, int& balls)
+	{
 		for (int i = 0; i < guessNumber.length(); i++) {
 			for (int j = 0; j < question.length(); j++) {
 				if (guessNumber[i] == question[j]) {
@@ -35,8 +42,6 @@ public:
 				}
 			}
 		}
-
-		return { false, strikes, balls };
 	}
 
 	void assertIllegalArgument(const std::string& guessNumber)
