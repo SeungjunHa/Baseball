@@ -18,12 +18,21 @@ public:
 			}
 		}
 
-		if (guessNumber[0] == guessNumber[1]
-			|| guessNumber[1] == guessNumber[2]
-			|| guessNumber[2] == guessNumber[0]) {
+		if (isDuplicatedNumber(guessNumber)) {
 			throw invalid_argument("Must not have the same number");
 		}
 	}
+
+	bool isDuplicatedNumber(const std::string& guessNumber)
+	{
+		if (guessNumber[0] == guessNumber[1]
+			|| guessNumber[1] == guessNumber[2]
+			|| guessNumber[2] == guessNumber[0]) {
+			return true;
+		}
+		return false;
+	}
+
 private:
 };
 
