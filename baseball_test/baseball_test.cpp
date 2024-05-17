@@ -14,7 +14,9 @@ public:
 		}
 	}
 };
+
 TEST_F(BaseballFixture, ThrowExceptionWhenInvalidCase) {
 	assertIllegalargument("12");
 	assertIllegalargument("12s");
+	assertIllegalargument("121");
 }
