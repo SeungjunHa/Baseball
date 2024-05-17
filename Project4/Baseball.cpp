@@ -34,12 +34,12 @@ public:
 	{
 		for (int i = 0; i < guessNumber.length(); i++) {
 			for (int j = 0; j < question.length(); j++) {
-				if (guessNumber[i] == question[j]) {
-					if (i == j)
-						strikes++;
-					else
-						balls++;
-				}
+				if (guessNumber[i] != question[j]) 
+					continue;
+				if (i == j)
+					strikes++;
+				else
+					balls++;
 			}
 		}
 	}
